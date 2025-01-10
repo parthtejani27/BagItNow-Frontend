@@ -1,0 +1,269 @@
+/* Base Tailwind Directives */
+@tailwind base; /* Reset styles and base styles */
+@tailwind components; /* Component classes */
+@tailwind utilities; /* Utility classes */
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --background-primary: #ffffff;
+    --background-secondary: #f3f4f6;
+    --background-tertiary: #e5e7eb;
+
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+
+    --border-primary: #e5e7eb;
+    --border-secondary: #d1d5db;
+
+    --accent-primary: #000000;
+    --accent-secondary: #1f2937;
+
+    --accent-success: #22c55e;  /* green-500 */
+    --accent-success-dark: #16a34a;  /* green-600 */
+    
+    /* Add component-specific variables */
+    --navbar-height: 4rem;  /* 64px */
+    --navbar-padding: 1rem;
+  }
+
+  .dark {
+    /* Dark theme colors */
+    --background-primary: #141414;
+    --background-secondary: #121212;
+    --background-tertiary: #0e0e0e;
+
+    --text-primary: #ffffff;
+    --text-secondary: #e5e7eb;
+    --text-tertiary: #9ca3af;
+
+    --border-primary: #1f2937;
+    --border-secondary: #374151;
+
+    --accent-primary: #ffffff;
+    --accent-secondary: #e5e7eb;
+    --accent-success: #4ade80;  /* green-400 */
+    --accent-success-dark: #22c55e;  
+  }
+}
+
+@layer components {
+  .bg-accent-success {
+    @apply bg-[var(--accent-success)];
+  }
+
+  .bg-accent-success-dark {
+    @apply bg-[var(--accent-success-dark)];
+  }
+
+  /* Navbar-specific utilities */
+  .navbar-height {
+    height: var(--navbar-height);
+  }
+
+  .navbar-padding {
+    padding: var(--navbar-padding);
+  }
+}
+
+/* Common utility classes */
+@layer components {
+  .bg-theme-primary {
+    @apply bg-[var(--background-primary)];
+  }
+
+  .bg-theme-secondary {
+    @apply bg-[var(--background-secondary)];
+  }
+
+  .bg-theme-tertiary {
+    @apply bg-[var(--background-tertiary)];
+  }
+
+  .text-theme-primary {
+    @apply text-[var(--text-primary)];
+  }
+
+  .text-theme-secondary {
+    @apply text-[var(--text-secondary)];
+  }
+
+  .text-theme-tertiary {
+    @apply text-[var(--text-tertiary)];
+  }
+
+  .border-theme-primary {
+    @apply border-[var(--border-primary)];
+  }
+
+  .border-theme-secondary {
+    @apply border-[var(--border-secondary)];
+  }
+
+  /* Common component classes */
+  .card-theme {
+    @apply bg-theme-primary border border-theme-primary rounded-lg shadow-sm;
+  }
+
+  .input-theme {
+    @apply bg-theme-secondary text-theme-primary border border-theme-primary 
+      rounded-lg focus:ring-2  outline-none;
+  }
+
+  .button-theme-primary {
+    @apply bg-[var(--accent-primary)] text-[var(--background-primary)] 
+      rounded-full hover:opacity-90 transition-all;
+  }
+
+  .button-theme-secondary {
+    @apply bg-theme-secondary text-theme-primary 
+      rounded-full hover:bg-theme-tertiary transition-all;
+  }
+
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Basic Button */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+    /* px-4: padding left and right 1rem */
+    /* py-2: padding top and bottom 0.5rem */
+    /* rounded-lg: border radius */
+    /* font-medium: font weight */
+    /* transition-colors: smooth color transition */
+    /* duration-200: transition duration 200ms */
+  }
+
+  /* Primary Button Variant */
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+    /* bg-primary-500: background color from theme */
+    /* text-white: white text */
+    /* hover:bg-primary-600: darker background on hover */
+  }
+
+  /* Secondary Button Variant */
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600;
+  }
+
+  /* Large Button Variant */
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* Small Button Variant */
+  .btn-sm {
+    @apply px-3 py-1 text-sm;
+  }
+
+  /* Disabled Button State */
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Input Field */
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    /* w-full: full width */
+    /* border: border style */
+    /* focus:ring-2: focus ring width */
+    /* focus:ring-primary-500: focus ring color */
+    /* focus:border-transparent: transparent border on focus */
+  }
+
+  /* Card Component */
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+    /* bg-white: white background */
+    /* rounded-lg: rounded corners */
+    /* shadow-md: medium shadow */
+    /* overflow-hidden: hide overflowing content */
+  }
+}
+
+/* Additional Useful Components */
+@layer components {
+  /* Form Group */
+  .form-group {
+    @apply mb-4;
+  }
+
+  /* Form Label */
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* Error Message */
+  .error-message {
+    @apply text-red-500 text-sm mt-1;
+  }
+
+  /* Success Message */
+  .success-message {
+    @apply text-green-500 text-sm mt-1;
+  }
+
+  /* Badge */
+  .badge {
+    @apply px-2 py-1 text-xs rounded-full;
+  }
+
+  /* Container */
+  /* .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  } */
+}
+
+@layer components {
+  /* Interactive Components */
+  .menu-item {
+    @apply px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors duration-200;
+  }
+
+  .dropdown {
+    @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5;
+  }
+
+  /* Layout Components */
+  .page-container {
+    @apply min-h-screen bg-gray-50;
+  }
+
+  .section {
+    @apply py-12;
+  }
+
+  /* Grid System */
+  .grid-container {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    @apply transition-opacity duration-300 ease-in-out;
+  }
+
+  .slide-in {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  /* Loading States */
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  /* Form Variations */
+  .input-error {
+    @apply border-red-500 focus:ring-red-500;
+  }
+
+  .input-success {
+    @apply border-green-500 focus:ring-green-500;
+  }
+}
