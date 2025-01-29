@@ -19,6 +19,7 @@ const Profile = () => {
       <Routes>
         <Route index element={<Navigate to="/profile/settings" replace />} />
         <Route path="settings" element={<AccountSettings />} />
+        {/* asda */}
         <Route path="orders">
           <Route index element={<OrderHistory />} />
           <Route path=":orderId" element={<OrderDetails />} />
