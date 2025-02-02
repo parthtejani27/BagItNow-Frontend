@@ -1,6 +1,6 @@
 # BagItNow - Modern Grocery Shopping Platform
 
-![BagItNow Banner](public/assets/images/banner.png)
+![BagItNow Banner]([public/assets/images/banner.png](https://github.com/user-attachments/assets/33e4cc23-6f84-418c-be32-2f3224c102e4))
 
 BagItNow is a modern, full-featured grocery shopping platform built with React, Redux, and Tailwind CSS. It provides a seamless shopping experience with features like dark mode support, real-time order tracking, and secure payment processing.
 
